@@ -5,23 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Property Ownership Verification</title>
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     <div class="container">
         <h1>Property Ownership Verification</h1>
-        <div class="form-group">
-            <input type="text" id="title" placeholder="Title">
+        <div class="role-selection">
+            <label>
+                <input type="radio" name="role" value="seller" checked> Seller
+            </label>
+            <label>
+                <input type="radio" name="role" value="buyer"> Buyer
+            </label>
         </div>
-        <div class="form-group">
-            <input type="text" id="location" placeholder="Location">
+
+        <!-- Seller Section -->
+        <div id="sellerSection" class="form-group">
+            <label for="title">Property Title</label>
+            <input type="text" id="title" placeholder="Enter property title">
+            
+            <label for="location">Property Location</label>
+            <input type="text" id="location" placeholder="Enter property location">
+            
+            <button id="registerProperty">Register Property</button>
         </div>
-        <button id="registerProperty">Register Property</button>
-        <button id="verifyProperty">Verify Property</button>
-        <div class="form-group">
-            <input type="text" id="transferTo" placeholder="Transfer To">
+
+        <!-- Buyer Section -->
+        <div id="buyerSection" class="form-group" style="display: none;">
+            <label for="propertyId">Property Title</label>
+            <input type="text" id="propertyId" placeholder="Enter property title to verify">
+
+            <button id="verifyProperty">Verify Property</button>
+
+            <label for="transferTo">Transfer To</label>
+            <input type="text" id="transferTo" placeholder="Enter new owner's name">
+            
+            <button id="transferProperty">Transfer Property</button>
         </div>
+
         <p id="statusMessage"></p>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
